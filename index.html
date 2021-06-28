@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(140, 122, 122, 1) 0%, rgba(175, 135, 124, 1) 65%, rgba(175, 135, 124, 1) 100%) fixed;
+            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <my-card id="m-card" cost="150" speed="16" train="20" train-time="s"
+        avatar="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png"
+        description="The Barbarian is a kilt-clad Scottish warrior with an angry, battle-ready expression, hungry for destruction. He has Killer yellow horseshoe mustache."
+        name="The Barbarian" level="level 4" color="#FFA500"
+        bg="url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg')">
+    </my-card>
+    <!-- <script src="./component/index.js" type="module"></script> -->
+    <script src="./component/ParagraphCp.js" type="module"></script>
+</body>
+
+</html>
