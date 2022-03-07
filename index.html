@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Document</title>
     <style>
         * {
@@ -15,22 +19,58 @@
 
         body {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: center;
             background: linear-gradient(to bottom, rgba(140, 122, 122, 1) 0%, rgba(175, 135, 124, 1) 65%, rgba(175, 135, 124, 1) 100%) fixed;
             background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg') no-repeat center center fixed;
             background-size: cover;
         }
+
+        .show1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        .show2 {
+            position: absolute;
+            top: 0px;
+        }
     </style>
+    <script>
+        $(document).ready(function () {
+            $(".show1").click(function () {
+                $(".show2").css("z-index", "1");
+                $(".show1").css("z-index", "0");
+            });
+            $(".show2").click(function () {
+                $(".show1").css("z-index", "1");
+                $(".show2").css("z-index", "0");
+            });
+            setTimeout(function(){ alert("Click on the card to switch"); }, 100);
+        });
+    </script>
 </head>
 
 <body>
-    <my-card id="m-card" cost="150" speed="16" train="20" train-time="s"
-        avatar="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png"
-        description="The Barbarian is a kilt-clad Scottish warrior with an angry, battle-ready expression, hungry for destruction. He has Killer yellow horseshoe mustache."
-        name="The Barbarian" level="level 4" color="#FFA500"
-        bg="url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg')">
-    </my-card>
+    <body>
+        <div class="container-img">
+            <div class="show1">
+                <my-card id="m-card" cost="150" speed="16" train="20" train-time="s"
+                    avatar="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png"
+                    description="The Barbarian is a kilt-clad Scottish warrior with an angry, battle-ready expression, hungry for destruction. He has Killer yellow horseshoe mustache."
+                    name="The Barbarian" level="level 4" color="#FFA500"
+                    bg="url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg')">
+                </my-card>
+            </div>
+            <div class="show2">
+                <my-card id="m-card" cost="300" speed="24" train="25" train-time="s"
+                    avatar="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer.png"
+                    description="The Archer is a female warrior with sharp eyes. She wears a short, light green dress, a hooded cape, a leather belt and an attached small pouch"
+                    name="The Archer" level="level 5" color="#FF6699"
+                    bg="url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer-bg.jpg')">
+                </my-card>
+            </div>
+        </div>
     <!-- <script src="./component/index.js" type="module"></script> -->
     <script src="./component/ParagraphCp.js" type="module"></script>
 </body>

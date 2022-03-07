@@ -52,7 +52,7 @@ h1{
     border-bottom-left-radius:20px;
     border-bottom-right-radius:20px;
     display:flex;
-    flex-wrap:wrap;
+   
 }
 .box-1{
     border-right: 1px solid #606060;
